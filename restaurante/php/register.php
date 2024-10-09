@@ -27,19 +27,30 @@ include('conn.php');
     </div>
 </body>
 <?php
-if(!empty($_POST['nombre'])&&!empty($_POST['email'])&&!empty($_POST['contraseña'])){
-    if(isset($_POST['register'])){
-        $nombre=$_POST['nombre'];
-        $email=$_POST['email'];
-        $contraseña=$_POST['contraseña'];
-        $verificar=mysqli_query($conn, "SELECT * FROM usuario where correo = '$email'");
-        if(!$verificar){
-            $subir=mysqli_query($conn,"INSERT INTO usuario (nombre_completo,correo,contraseña) VALUES ('$nombre','$email','$contraseña')");
-            echo"<script>header.href:login.php</script>";
+if(isset($_POST['register'])){
+    if(strlen($_POST['nombre']) >= 1 && strlen($_POST['email']) >= 1 && strlen($_POST['contraseña']) >=1){
+        $nombre = trim($_POST['nombre']);
+        $email = trim($_POST['email']);
+        $contraseña = trim($_POST['contraseña']);
+        $num_id = rand(100000, 10000000);
+        
+        
+        $duplicado = mysqli_query($conn, "SELECT * FROM usuario where correo = '$email'");
+        if(mysqli_num_rows($duplicado) > 0){
+            echo "<script>alert('Usuario existente')</script>";
+            
         }
         else{
-            echo"error";
+            $sql = mysqli_query($conn, "INSERT INTO usuario (id_usuario, nombre_completo, correo, contraseña) VALUES ('$num_id','$nombre', '$email', '$contraseña')");
+            if($sql){
+                
+                echo "<script>alert('datos ingresados con exito')</script>";
+                echo "<script>location.href='login.php'</script>";
+            }
         }
+        
+
+        
     }
 }
 else{
