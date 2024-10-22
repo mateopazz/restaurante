@@ -20,6 +20,7 @@
             <input type="password" name="contraseña" id="contraseña"> <br>
             <input type="submit" value="Login" name="login" id="login">
         </form>
+        <p>No tenés una cuenta? <span><a href="register.php">Registrate</a></span></p>
         </div>
         
     </div>
@@ -29,7 +30,15 @@
         if(!empty($_POST['email'] && !empty($_POST['contraseña']))){
             $email = trim($_POST['email']);
             $contraseña = trim($_POST['contraseña']);
-            $verificar_usuario = mysqli_query($conn, "SELECT * FROM usuario where email = '$email' AND contraseña = '$contraseña'");
+            $verificar_usuario = mysqli_query($conn, "SELECT * FROM usuario where correo = '$email' AND contraseña = '$contraseña'");
+            if($verificar_usuario){
+                $vu = mysqli_fetch_array($verificar_usuario);
+                session_id($vu['id_usuario']);
+                session_start();
+                $_SESSION["login"] = true;
+                $_SESSION['id_usuario'] = $vu['id_usuario'];
+                header("location:../index.php");
+            }
         }
     }
 ?>

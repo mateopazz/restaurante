@@ -22,6 +22,7 @@ include('conn.php');
             <input type="password" name="contraseña" id="contraseña"> <br>
             <input type="submit" value="Registrarse" name="register" id="login">
         </form>
+        <p>Ya tenés una cuenta? <span><a href="login.php">inicia sesión</a></span></p>
         </div>
         
     </div>

@@ -10,6 +10,14 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h2>RESTAURANTE</h2>
+        <div class="opciones">
+            <li><a href="">Ver Menú</a></li>
+            <li><a href="">Tus Pedidos</a></li>
+            <li><a href="">Puntos de Encuentro</a></li>
+            <li><a href="">Contactos</a></li>
+        </div>
+    </header>
 </body>
 </html>
