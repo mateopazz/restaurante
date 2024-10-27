@@ -1,3 +1,6 @@
+<?php
+    include('../database/conn.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +49,7 @@
         <input type="submit" value="Actualizar Plato" name="modificar" id="submit">
     </form>
 <?php
-    include('../database/conn.php');
+    
 
     /*INGRESO DE DATOS*/
     if(isset($_POST['subir'])){
@@ -64,9 +67,7 @@
                 echo "<script>alert('el producto ya existe')</script>";
             }
         }
-        else{
-            echo "<script>alert('Rellene los campos')</script>";    
-        }
+        
     }
 ?>
     <table>

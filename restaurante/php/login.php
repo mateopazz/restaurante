@@ -20,7 +20,7 @@
             <input type="password" name="contraseña" id="contraseña"> <br>
             <input type="submit" value="Login" name="login" id="login">
         </form>
-        <p>No tenés una cuenta? <span><a href="register.php">Registrate</a></span></p>
+        <p id="redireccion">No tenés una cuenta? <span><a href="register.php">Registrate</a></span></p>
         </div>
         
     </div>

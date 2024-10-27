@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-10-2024 a las 02:48:33
+-- Tiempo de generación: 23-10-2024 a las 03:14:49
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -41,11 +41,32 @@ CREATE TABLE `inventario` (
 --
 
 CREATE TABLE `menu` (
+  `id_menu` int(6) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `categoria` varchar(50) NOT NULL,
   `precio` double(8,2) NOT NULL,
   `ingredientes` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `menu`
+--
+
+INSERT INTO `menu` (`id_menu`, `nombre`, `categoria`, `precio`, `ingredientes`) VALUES
+(1, 'Milanesa con fritas (pollo)', 'Principal', 12000.00, 'Milanesa de pollo, Papas fritas'),
+(2, 'Milanesa con fritas (carne)', 'Principal', 13000.00, 'Milanesa de carne, papas fritas'),
+(3, 'Choripan ', 'Principal', 7500.00, 'Chorizo de cerdo ahumado, pan campestre'),
+(4, '?oquis', 'Principal', 7500.00, '?oquis de papa'),
+(5, 'Picada completa ', 'Entrada', 6000.00, 'Salame, queso con pimienta, burrata, zanahoria, tomatitos, aceitunas, queso azul, queso cheddar'),
+(6, 'Carbonara', 'Principal', 13000.00, 'Spaghettis, yemas de huevos, queso, bacon y pimienta negra'),
+(7, 'Lemon pie ', 'Postre', 5000.00, 'Merengue italiano, yemas, azucar'),
+(8, 'Chocotorta', 'Postre', 4500.00, 'Chocolinas, dulce de leche, queso crema'),
+(9, 'Tiramisu', 'Postre', 6000.00, 'Vainillas, cafe, queso mascarpone'),
+(10, 'Rogel', 'Postre', 8000.00, 'Dulce de leche, merengue italiano'),
+(11, 'Coca cola', 'Bebidas', 2000.00, 'Gaseosa con azucar'),
+(12, 'Agua', 'Bebidas', 1500.00, 'Agua mineral'),
+(13, 'Sprite', 'Bebidas', 2000.00, 'Gaseosa con azucar'),
+(14, 'Coca cola zero', 'Bebidas', 2000.00, 'Gaseosa sin azucar');
 
 -- --------------------------------------------------------
 
@@ -76,6 +97,13 @@ CREATE TABLE `usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nombre_completo`, `correo`, `contraseña`) VALUES
+(9095691, 'juana', 'juanitapepita168@gmail.com', 'salchicha.2006');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -84,6 +112,12 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `inventario`
   ADD PRIMARY KEY (`id_ingredientes`);
+
+--
+-- Indices de la tabla `menu`
+--
+ALTER TABLE `menu`
+  ADD PRIMARY KEY (`id_menu`);
 
 --
 -- Indices de la tabla `pedidos`
@@ -108,6 +142,12 @@ ALTER TABLE `inventario`
   MODIFY `id_ingredientes` int(6) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id_menu` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
@@ -117,7 +157,7 @@ ALTER TABLE `pedidos`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(6) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9095692;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

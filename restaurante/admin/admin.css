@@ -23,8 +23,10 @@ form{
     color: white;
     background-color: #d92323;
     border-radius: .5em;
+    
     input{
         border: none;
+        color: #0d0d0d;
     }
     .categoria{
         margin-top: 1em;
@@ -40,6 +42,7 @@ form{
         background-color: #f2e852;
         margin-bottom: 1em;
         transition: ease-in-out .2s;
+       
     }
     #submit:hover{
         cursor: pointer;
