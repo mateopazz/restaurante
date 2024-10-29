@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 *{
     margin: 0;
@@ -28,36 +29,31 @@ header{
     li{
         list-style: none;
         margin: 0em 1em;
+        
+
         a{
             text-decoration: none;
+            
             font-size: large;
             transition:ease-out .1s;
         }
         a:hover{
-            color: white;
+            color: rgb(242, 232, 82);
         }
     }
 }
-menu{
-    display: flex;
-    justify-content: center;
-}
-.platos{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.carta{
-    background-color: white;
-    color: black;
-    padding: 1em;
-    margin: 1em 5em;
-    box-shadow: 10px 10px 0px black;
-   
-}
-.categoriaMenu{
-    color: white;
-    text-shadow: black 3px 3px;
-   margin-top: .5em;
+.contacto{
+    background-color: rgb(201, 98, 98);
+    width: 400px;
+    height: 200px;
     text-align: center;
+    margin: auto;
+    margin-top: 230px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+
 }
