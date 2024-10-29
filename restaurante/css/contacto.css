@@ -6,14 +6,21 @@
     color: rgb(13, 13, 13);
 }
 body{
-    background-color: rgb(115, 36, 36);
+    background-color: rgb(131, 16, 5);
 }
 header{
-    background-color: rgb(217, 35, 35);
+    background-color: rgb(179, 33, 19);
     padding: 1em;
     display: flex;
     justify-content: space-between;
     font-size: larger;
+    h2{
+        display: flex;
+        align-items: center;
+    }
+    h2 span{
+        margin: 0em .2em;
+    }
 }
 .opciones{
     display: flex;
