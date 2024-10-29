@@ -18,16 +18,27 @@
         </div>
     </header>
     <div class="menu">
-        <div class="principales">
+    <h1 class="categoriaMenu">Entradas</h1>
+        <div class="platos">
+           
             <?php
                 include('database/conn.php');
-                $principal = mysqli_query($conn, "SELECT * FROM menu where categoria = 'Principal'");
+                $principal = mysqli_query($conn, "SELECT * FROM menu where categoria = 'Entrada'");
                 while($row_principal=mysqli_fetch_assoc($principal)){
                     $precio_converted = number_format($row_principal['precio'], 2, ',', '.');
                     ?>
                     
                     <div class="carta">
-                        <div class="imagen"><img src="no_image.png" alt="" width="300"></div>
+                        <div class="imagen">
+                            <?php
+                                if(!empty($row_principal['imagen'])){
+                                    ?><img height="300px" src="data:image/jpg;base64,<?php echo base64_encode($row_principal['imagen']);?>"><?php
+                                }
+                                else{
+                                    ?><img src="no_image.png" width="300px"><?php
+                                }
+                            ?>
+                        </div>
                         <div class="nombre"><?php echo $row_principal['nombre']?></div>
                         
                         <div class="precio"><?php echo "$".$precio_converted?></div>
@@ -40,6 +51,88 @@
                 }
             ?>
         </div>
+        <h1 class="categoriaMenu">Platos Principales</h1>
+        <div class="platos">
+           
+            <?php
+                include('database/conn.php');
+                $principal = mysqli_query($conn, "SELECT * FROM menu where categoria = 'Principal'");
+                while($row_principal=mysqli_fetch_assoc($principal)){
+                    $precio_converted = number_format($row_principal['precio'], 2, ',', '.');
+                    ?>
+                    <div class="carta">
+                        <div class="imagen">
+                            <?php
+                                if(!empty($row_principal['imagen'])){
+                                    ?><img height="300px" src="data:image/jpg;base64,<?php echo base64_encode($row_principal['imagen']);?>"><?php
+                                }
+                                else{
+                                    ?><img src="no_image.png" width="300px"><?php
+                                }
+                            ?>
+                        </div>
+                        <div class="nombre"><?php echo $row_principal['nombre']?></div>
+                        <div class="precio"><?php echo "$".$precio_converted?></div>
+                    </div>
+                    <?php
+                }
+            ?>
+        </div>
+        <h1 class="categoriaMenu">Bebidas</h1>
+        <div class="platos">
+           
+            <?php
+                include('database/conn.php');
+                $principal = mysqli_query($conn, "SELECT * FROM menu where categoria = 'Bebidas'");
+                while($row_principal=mysqli_fetch_assoc($principal)){
+                    $precio_converted = number_format($row_principal['precio'], 2, ',', '.');
+                    ?>
+                    <div class="carta">
+                        <div class="imagen">
+                            <?php
+                                if(!empty($row_principal['imagen'])){
+                                    ?><img height="300px" src="data:image/jpg;base64,<?php echo base64_encode($row_principal['imagen']);?>"><?php
+                                }
+                                else{
+                                    ?><img src="no_image.png" width="300px"><?php
+                                }
+                            ?>
+                        </div>
+                        <div class="nombre"><?php echo $row_principal['nombre']?></div>
+                        <div class="precio"><?php echo "$".$precio_converted?></div>
+                    </div>
+                    <?php
+                }
+            ?>
+        </div>
+        <h1 class="categoriaMenu">Postres</h1>
+        <div class="platos">
+           
+            <?php
+                include('database/conn.php');
+                $principal = mysqli_query($conn, "SELECT * FROM menu where categoria = 'Postre'");
+                while($row_principal=mysqli_fetch_assoc($principal)){
+                    $precio_converted = number_format($row_principal['precio'], 2, ',', '.');
+                    ?>
+                    <div class="carta">
+                        <div class="imagen">
+                            <?php
+                                if(!empty($row_principal['imagen'])){
+                                    ?><img height="300px" src="data:image/jpg;base64,<?php echo base64_encode($row_principal['imagen']);?>"><?php
+                                }
+                                else{
+                                    ?><img src="no_image.png" width="300px"><?php
+                                }
+                            ?>
+                        </div>
+                        <div class="nombre"><?php echo $row_principal['nombre']?></div>
+                        <div class="precio"><?php echo "$".$precio_converted?></div>
+                    </div>
+                    <?php
+                }
+            ?>
+        </div>
+
     </div>
 </body>
 </html>

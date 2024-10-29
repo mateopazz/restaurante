@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <H1>INGRESAR PLATO</H1>
         <p>Nombre del Plato:</p>
         <input type="text" name="nombre_plato">
@@ -25,7 +25,9 @@
         <p>Precio:</p>
         <input type="number" name="precio">
         <p>Ingredientes:</p>
-        <input type="text" name="ingredientes"><br>
+        <input type="text" name="ingredientes">
+        <p>Imagen:</p>
+        <input type="file" name="imagen" required>
         <input type="submit" value="Subir Plato" name="subir" id="submit">
     </form>
 
@@ -58,13 +60,16 @@
             $categoria = $_POST['categoria'];
             $precio = $_POST['precio'];
             $ingredientes = $_POST['ingredientes'];
+            $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
 
             $duplicado = mysqli_query($conn, "SELECT * FROM menu where nombre = '$nombre'");
-            if(!$duplicado){
-                $sql = mysqli_query($conn, "INSERT INTO menu (nombre, categoria, precio, ingredientes) VALUES ('$nombre','$categoria','$precio','$ingredientes')");
+
+            if($row = mysqli_num_rows($duplicado) > 0){
+                echo "<script>alert('el producto ya existe')</script>";
+                
             }
             else{
-                echo "<script>alert('el producto ya existe')</script>";
+                $sql = mysqli_query($conn, "INSERT INTO menu (nombre, categoria, precio, ingredientes, imagen) VALUES ('$nombre','$categoria','$precio','$ingredientes', '$imagen')");
             }
         }
         

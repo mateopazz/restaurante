@@ -42,7 +42,7 @@ menu{
     display: flex;
     justify-content: center;
 }
-.principales{
+.platos{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -54,4 +54,10 @@ menu{
     margin: 1em 5em;
     box-shadow: 10px 10px 0px black;
    
+}
+.categoriaMenu{
+    color: white;
+    text-shadow: black 3px 3px;
+   margin-top: .5em;
+    text-align: center;
 }
