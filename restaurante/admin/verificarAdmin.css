@@ -1,0 +1,23 @@
+*{
+    font-size: larger;
+    margin: 0;
+    font-family: monospace;
+    color: white;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    background-color: black;
+}
+form{
+    background-color: red;
+    padding: 1em;
+}
+input{
+    color: black;
+}

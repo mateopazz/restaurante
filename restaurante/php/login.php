@@ -30,15 +30,20 @@
         if(!empty($_POST['email'] && !empty($_POST['contraseña']))){
             $email = trim($_POST['email']);
             $contraseña = trim($_POST['contraseña']);
+            $verificar_admin = mysqli_query($conn, "SELECT * FROM administradores where usuario = '$email' AND contraseña = '$contraseña'");
             $verificar_usuario = mysqli_query($conn, "SELECT * FROM usuario where correo = '$email' AND contraseña = '$contraseña'");
+            if($datosAdmin = $verificar_admin->fetch_object()){
+                echo "<script>location.href='../admin/verificarAdmin.php'</script>";
+            }
             if($verificar_usuario){
                 $vu = mysqli_fetch_array($verificar_usuario);
                 session_id($vu['id_usuario']);
                 session_start();
                 $_SESSION["login"] = true;
                 $_SESSION['id_usuario'] = $vu['id_usuario'];
-                header("location:../index.php");
+                echo "<script>location.href='../index.php'</script>";
             }
+            
         }
     }
 ?>

@@ -11,14 +11,18 @@ body{
     align-items: center;
     background-color: #0d0d0d;
 }
+.formularios{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
 form{
     display: flex;
-    
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1em;
-    margin-top: 2em;
+    margin: 2em 0em;
     width: 20em;
     color: white;
     background-color: #d92323;
@@ -42,7 +46,6 @@ form{
         background-color: #f2e852;
         margin-bottom: 1em;
         transition: ease-in-out .2s;
-       
     }
     #submit:hover{
         cursor: pointer;
@@ -50,4 +53,26 @@ form{
         box-shadow: 0px 0px 10px #f2e852;
         border-radius: 2em;
     }
+}
+table{
+    border: 1px solid;
+    display: flex;   
+}
+td{
+    text-align: center;
+    border: 1px solid;
+    padding: .5em;
+}
+.categoriaIngrediente{
+margin-top: .5em;
+display: flex;
+flex-direction: column;
+text-align: center;
+    span{
+        margin-bottom: .5em;
+    }
+}
+.opcion{
+    margin-top: 1em;
+    font-size: larger;
 }

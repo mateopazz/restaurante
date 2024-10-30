@@ -43,6 +43,9 @@
                         <div class="nombre"><?php echo $row_principal['nombre']?></div>
                         
                         <div class="precio"><?php echo "$".$precio_converted?></div>
+                        <div class="botonmenu">
+                            <button>Agregar a pedidos</button>
+                        </div>
                     </div>
 
 
@@ -74,6 +77,9 @@
                         </div>
                         <div class="nombre"><?php echo $row_principal['nombre']?></div>
                         <div class="precio"><?php echo "$".$precio_converted?></div>
+                        <div class="botonmenu">
+                            <button>Agregar a pedidos</button>
+                        </div>
                     </div>
                     <?php
                 }
@@ -101,6 +107,9 @@
                         </div>
                         <div class="nombre"><?php echo $row_principal['nombre']?></div>
                         <div class="precio"><?php echo "$".$precio_converted?></div>
+                        <div class="botonmenu">
+                            <button>Agregar a pedidos</button>
+                        </div>
                     </div>
                     <?php
                 }
@@ -128,6 +137,9 @@
                         </div>
                         <div class="nombre"><?php echo $row_principal['nombre']?></div>
                         <div class="precio"><?php echo "$".$precio_converted?></div>
+                        <div class="botonmenu">
+                            <button>Agregar a pedidos</button>
+                        </div>
                     </div>
                     <?php
                 }

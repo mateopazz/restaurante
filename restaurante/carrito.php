@@ -17,5 +17,8 @@
             <li><a href="Contactos.php">Contactos</a></li>
         </div>
     </header>
+    <?php
+        1
+    ?>
 </body>
 </html>
