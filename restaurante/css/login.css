@@ -8,7 +8,7 @@ html{
 }
 body{
     height: 100%;
-    background-color: #513158;
+    background-color: rgb(131, 16, 5);
 }
 .box{
     height: 100%;
@@ -18,25 +18,35 @@ body{
     align-items: center;
 }
 .form{
-    border-radius: 0.5em;
-    background-color: #df7251;
+    border-radius: .5em .5em 0em 0em;
+    background-color: rgb(143, 22, 0);
     text-align: center;
+}
+#redireccion{
+    margin: 1em;
+    color: white;
+}
+#redireccion a{
+    color: white;
+    text-decoration: none;
+}
+#redireccion a:hover{
+    text-decoration: 2px underline;
 }
 h1{
     padding: 0.5em 0em;
     color: white;
 }
-
-
 form{
-    
     font-size: larger;
     color: white;
     text-align: center;
     padding: 2em 3em;
-    background-color: rgb(217, 35, 35);
+    background-color: rgb(179, 33, 19);
 }
 input{
+    border: none;
+    box-shadow: 5px 5px 0px black;
     padding: 0.5em;
     font-size: large;
     margin-bottom: 1em;
@@ -46,8 +56,10 @@ input{
     margin: 0;
     padding: 0.5em 1em;
     border-radius: 5em;
+    background-color: white;
+    transition: .2s ;
 }
 #login:hover{
     cursor: pointer;
-    opacity: 70%;
+    background-color: red;
 }

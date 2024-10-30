@@ -6,7 +6,7 @@ include('conn.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login.css"> 
+    <link rel="stylesheet" href="../css/login.css">
     <title>Document</title>
 </head>
 <body>
@@ -22,7 +22,7 @@ include('conn.php');
             <input type="password" name="contraseña" id="contraseña"> <br>
             <input type="submit" value="Registrarse" name="register" id="login">
         </form>
-        <p>Ya tenés una cuenta? <span><a href="login.php">inicia sesión</a></span></p>
+        <p id="redireccion">Ya tenés una cuenta? <span><a href="login.php">inicia sesión</a></span></p>
         </div>
         
     </div>
@@ -54,8 +54,7 @@ if(isset($_POST['register'])){
         
     }
 }
-else{
-    echo "no se pudo registrar";
-}
+
+
 ?>
 </html>
